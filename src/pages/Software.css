@@ -1,0 +1,178 @@
+
+.software-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 24px 110px;
+}
+
+.software-heading {
+  margin-bottom: 55px;
+}
+
+.software-heading h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 5vw, 60px);
+  color: #f3e7d8;
+  margin: 18px 0;
+}
+
+.software-heading p {
+  color: #d8bbc2;
+  line-height: 1.8;
+  max-width: 650px;
+}
+
+.software-projects {
+  display: grid;
+  gap: 36px;
+}
+
+.software-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  background: #30232f;
+  border: 1px solid #793c49;
+  overflow: hidden;
+}
+
+.software-preview {
+  min-height: 390px;
+  background: #261c2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.software-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.software-image-placeholder {
+  text-align: center;
+  color: #d3a36d;
+  padding: 30px;
+}
+
+.software-image-placeholder span {
+  font-size: 48px;
+}
+
+.software-image-placeholder p {
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.software-details {
+  padding: clamp(24px, 3vw, 42px);
+}
+
+.software-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #d3a36d;
+}
+
+.software-status {
+  border: 1px solid #793c49;
+  padding: 7px 10px;
+  color: #c78794;
+}
+
+.software-details h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 3vw, 34px);
+  margin: 24px 0 14px;
+  color: #f3e7d8;
+}
+
+.software-description {
+  color: #d8bbc2;
+  line-height: 1.8;
+}
+
+.software-details h3 {
+  font-size: 14px;
+  margin-top: 28px;
+  color: #d3a36d;
+}
+
+.software-details ul {
+  padding-left: 20px;
+  color: #d8bbc2;
+  line-height: 1.8;
+}
+
+.software-details li {
+  margin-bottom: 8px;
+}
+
+.software-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 26px;
+}
+
+.software-tags span {
+  border: 1px solid #793c49;
+  color: #f3e7d8;
+  padding: 7px 11px;
+  font-size: 12px;
+}
+
+.software-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.software-button {
+  display: inline-block;
+  padding: 12px 18px;
+  background: #793c49;
+  color: #f3e7d8;
+  border: 1px solid #d3a36d;
+  text-decoration: none;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.software-button:hover {
+  background: #a15a69;
+}
+
+@media (max-width: 850px) {
+  .software-card {
+    grid-template-columns: 1fr;
+  }
+
+  .software-preview {
+    min-height: 260px;
+  }
+
+  .software-heading {
+    margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .software-page {
+    padding: 45px 16px 70px;
+  }
+
+  .software-preview {
+    min-height: 200px;
+  }
+
+  .software-details {
+    padding: 22px;
+  }
+}
