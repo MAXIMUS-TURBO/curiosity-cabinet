@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Software from "./pages/Software";
 import Marketing from "./pages/Marketing";
-import Analytics from "./pages/Analytics";
+import Analytics from "./pages/DataAnalytics";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 

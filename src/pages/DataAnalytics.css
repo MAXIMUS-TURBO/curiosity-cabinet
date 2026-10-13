@@ -1,0 +1,470 @@
+
+.observatory-page {
+  min-height: 100vh;
+  background: #201824;
+  color: #f3e7d8;
+}
+
+.observatory-hero {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 110px 24px 95px;
+  text-align: center;
+}
+
+.observatory-stars {
+  color: #d3a36d;
+  font-size: 30px;
+  letter-spacing: 20px;
+  margin-bottom: 35px;
+}
+
+.observatory-eyebrow,
+.observatory-section-heading > span,
+.observatory-project-number {
+  color: #d3a36d;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.observatory-hero h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(48px, 8vw, 90px);
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.observatory-tagline {
+  font-family: Georgia, serif;
+  font-size: clamp(19px, 3vw, 27px);
+  font-style: italic;
+  color: #c78794;
+}
+
+.observatory-divider {
+  color: #d3a36d;
+  margin: 32px 0;
+}
+
+.observatory-intro {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #c9b6b5;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.observatory-collection,
+.observatory-process,
+.observatory-toolkit {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 65px 24px;
+}
+
+.observatory-section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.observatory-section-heading h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 400;
+  margin: 12px 0;
+}
+
+.observatory-section-heading p {
+  color: #c9b6b5;
+  line-height: 1.7;
+}
+
+.observatory-project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.observatory-project-card {
+  background: #302432;
+  border: 1px solid rgba(211, 163, 109, 0.3);
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.observatory-project-card:first-child {
+  grid-column: 1 / -1;
+}
+
+.observatory-project-card:hover {
+  transform: translateY(-5px);
+  border-color: #d3a36d;
+}
+
+.observatory-project-image {
+  height: 260px;
+  background: #19121d;
+  overflow: hidden;
+}
+
+.observatory-project-card:first-child .observatory-project-image {
+  height: 380px;
+}
+
+.observatory-project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.observatory-image-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #d3a36d;
+}
+
+.observatory-image-placeholder > span {
+  font-size: 55px;
+}
+
+.observatory-image-placeholder p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.observatory-project-content {
+  padding: 30px;
+}
+
+.observatory-project-content h3 {
+  font-family: Georgia, serif;
+  font-size: 29px;
+  font-weight: 400;
+  margin: 14px 0 8px;
+}
+
+.observatory-project-subtitle {
+  color: #c78794;
+  font-style: italic;
+}
+
+.observatory-project-description {
+  color: #c9b6b5;
+  line-height: 1.8;
+  margin: 18px 0;
+}
+
+.observatory-project-tools,
+.observatory-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.observatory-project-tools span,
+.observatory-tools span {
+  border: 1px solid rgba(211, 163, 109, 0.35);
+  background: rgba(121, 60, 73, 0.2);
+  color: #e5b9c1;
+  padding: 7px 12px;
+  font-size: 12px;
+}
+
+.observatory-process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.observatory-process-step {
+  border-top: 1px solid #d3a36d;
+  padding: 22px 10px 0;
+}
+
+.observatory-process-step > span {
+  color: #d3a36d;
+  font-size: 12px;
+}
+
+.observatory-process-step h3 {
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.observatory-process-step p {
+  color: #c9b6b5;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.observatory-tools {
+  justify-content: center;
+}
+
+.observatory-tools span {
+  font-size: 14px;
+  padding: 11px 18px;
+}
+
+@media (max-width: 800px) {
+  .observatory-project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .observatory-project-card:first-child {
+    grid-column: auto;
+  }
+
+  .observatory-project-card:first-child .observatory-project-image {
+    height: 260px;
+  }
+
+  .observatory-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .observatory-hero {
+    padding: 80px 20px 65px;
+  }
+
+  .observatory-stars {
+    letter-spacing: 8px;
+  }
+
+  .observatory-project-content {
+    padding: 22px;
+  }
+
+  .observatory-process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Clickable project cards */
+
+.observatory-project-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.observatory-project-button:focus-visible {
+  outline: 2px solid #d3a36d;
+  outline-offset: -4px;
+}
+
+.observatory-project-explore {
+  display: inline-block;
+  margin-top: 18px;
+  color: #d3a36d;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* Modal backdrop */
+
+.analytics-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(12, 8, 15, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Modal container */
+
+.analytics-modal {
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #251c2a;
+  color: #f3e7d8;
+  border: 1px solid #d3a36d;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+}
+
+.analytics-modal-close {
+  position: sticky;
+  top: 15px;
+  float: right;
+  z-index: 5;
+  margin: 15px 15px -55px 0;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #d3a36d;
+  background: #201824;
+  color: #f3e7d8;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.analytics-modal-close:hover {
+  background: #793c49;
+}
+
+.analytics-modal-header {
+  padding: 55px 45px 30px;
+  text-align: center;
+}
+
+.analytics-modal-eyebrow,
+.analytics-modal-section > span {
+  color: #d3a36d;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.analytics-modal-header h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 5vw, 50px);
+  font-weight: 400;
+  margin: 16px 0;
+}
+
+.analytics-modal-header p {
+  color: #c78794;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.analytics-modal-gallery {
+  background: #161019;
+  text-align: center;
+}
+
+.analytics-modal-gallery > img {
+  display: block;
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.analytics-modal-gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 25px;
+}
+
+.analytics-modal-gallery-controls button {
+  border: 1px solid #795762;
+  background: transparent;
+  color: #f3e7d8;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.analytics-modal-gallery-controls button:hover {
+  border-color: #d3a36d;
+}
+
+.analytics-modal-gallery-controls span {
+  color: #c9b6b5;
+  font-size: 13px;
+}
+
+.analytics-modal-body {
+  padding: 40px 55px 55px;
+}
+
+.analytics-modal-description {
+  color: #e2d3d0;
+  line-height: 1.9;
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+
+.analytics-modal-section {
+  padding: 30px 0;
+  border-top: 1px solid rgba(211, 163, 109, 0.25);
+}
+
+.analytics-modal-section h3 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 27px;
+  margin: 12px 0;
+}
+
+.analytics-modal-section p,
+.analytics-modal-section li {
+  color: #c9b6b5;
+  line-height: 1.9;
+}
+
+.analytics-modal-section li {
+  margin-bottom: 8px;
+}
+
+.analytics-modal-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.analytics-modal-tools span {
+  padding: 8px 13px;
+  border: 1px solid rgba(211, 163, 109, 0.35);
+  color: #e5b9c1;
+  font-size: 12px;
+}
+
+.analytics-modal-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 13px 20px;
+  border: 1px solid #d3a36d;
+  color: #d3a36d;
+  text-decoration: none;
+}
+
+.analytics-modal-link:hover {
+  background: #793c49;
+  color: #f3e7d8;
+}
+
+@media (max-width: 600px) {
+  .analytics-modal-backdrop {
+    padding: 8px;
+  }
+
+  .analytics-modal {
+    max-height: 96vh;
+  }
+
+  .analytics-modal-header {
+    padding: 60px 22px 25px;
+  }
+
+  .analytics-modal-body {
+    padding: 25px 22px 35px;
+  }
+
+  .analytics-modal-gallery-controls {
+    padding: 12px;
+  }
+}

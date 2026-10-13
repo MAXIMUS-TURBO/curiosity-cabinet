@@ -20,7 +20,7 @@ const collections = [
     id: "03",
     title: "Data Analytics",
     description: "Dashboards, reporting, and data-driven insights.",
-    path: "/analytics",
+    path: "/DataAnalytics",
     icon: "▥",
   },
 ];
