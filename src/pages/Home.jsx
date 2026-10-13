@@ -34,18 +34,15 @@ function Home() {
         </span>
 
         <h1>
-          A curious mind.
-          <br />
-          A digital world.
+          Tahreem Fatima
         </h1>
 
         <p>
-          Exploring the intersection of software development,
-          digital communications, and data analytics.
+          Software Developer, Data Analyst & Creative Technologist
         </p>
 
         <a href="#collections" className="primary-button">
-          Explore the Collections ↓
+          Explore my Collections ↓
         </a>
       </section>
 

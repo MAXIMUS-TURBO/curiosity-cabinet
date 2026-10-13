@@ -1,12 +1,12 @@
 
 .software-page {
-  max-width: 1200px;
+  max-width: 1150px;
   margin: 0 auto;
   padding: 70px 24px 110px;
 }
 
 .software-heading {
-  margin-bottom: 55px;
+  margin-bottom: 42px;
 }
 
 .software-heading h1 {
@@ -19,97 +19,144 @@
 .software-heading p {
   color: #d8bbc2;
   line-height: 1.8;
-  max-width: 650px;
 }
 
-.software-projects {
+/* Small project icons */
+
+.project-icon-grid {
   display: grid;
-  gap: 36px;
+  grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+  gap: 16px;
+  margin-bottom: 48px;
 }
 
-.software-card {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+.project-icon-card {
+  min-height: 155px;
+  padding: 22px 12px;
   background: #30232f;
   border: 1px solid #793c49;
-  overflow: hidden;
-}
-
-.software-preview {
-  min-height: 390px;
-  background: #261c2a;
+  color: #d3a36d;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.2s, background 0.2s;
 }
 
-.software-preview img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.project-icon-card:hover,
+.project-icon-card:focus-visible {
+  border-color: #d3a36d;
+  background: #392938;
 }
 
-.software-image-placeholder {
-  text-align: center;
-  color: #d3a36d;
-  padding: 30px;
+.project-icon-card.selected {
+  border-color: #d3a36d;
+  background: #402d3c;
 }
 
-.software-image-placeholder span {
-  font-size: 48px;
+.project-icon-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f3e7d8;
 }
 
-.software-image-placeholder p {
+.project-icon-category {
   font-size: 11px;
-  letter-spacing: 2px;
+  color: #c78794;
+  text-align: center;
 }
 
-.software-details {
-  padding: clamp(24px, 3vw, 42px);
+/* Selected project details */
+
+.selected-project {
+  border-top: 1px solid #793c49;
+  padding-top: 40px;
 }
 
-.software-meta {
+.selected-project-header {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: #d3a36d;
 }
 
 .software-status {
   border: 1px solid #793c49;
   padding: 7px 10px;
   color: #c78794;
+  font-size: 11px;
 }
 
-.software-details h2 {
+.selected-project h2 {
   font-family: Georgia, serif;
-  font-size: clamp(25px, 3vw, 34px);
-  margin: 24px 0 14px;
   color: #f3e7d8;
+  font-size: clamp(26px, 4vw, 38px);
+  margin: 20px 0 12px;
 }
 
-.software-description {
+.selected-project-description {
   color: #d8bbc2;
   line-height: 1.8;
+  max-width: 750px;
+  margin-bottom: 30px;
 }
 
-.software-details h3 {
-  font-size: 14px;
-  margin-top: 28px;
+.selected-project-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 36px;
+  align-items: start;
+}
+
+.selected-project-image {
+  background: #261c2a;
+  border: 1px solid #793c49;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.selected-project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-image-placeholder {
+  text-align: center;
   color: #d3a36d;
+  padding: 35px;
 }
 
-.software-details ul {
-  padding-left: 20px;
+.project-image-placeholder span {
+  font-size: 40px;
+}
+
+.project-image-placeholder p {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.selected-project-info h3 {
+  color: #d3a36d;
+  font-size: 15px;
+  margin: 0 0 16px;
+}
+
+.selected-project-info ul {
   color: #d8bbc2;
   line-height: 1.8;
+  padding-left: 20px;
+  margin-bottom: 30px;
 }
 
-.software-details li {
+.selected-project-info li {
   margin-bottom: 8px;
 }
 
@@ -117,49 +164,37 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 26px;
+  margin-bottom: 28px;
 }
 
 .software-tags span {
   border: 1px solid #793c49;
   color: #f3e7d8;
-  padding: 7px 11px;
   font-size: 12px;
-}
-
-.software-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 30px;
+  padding: 7px 11px;
 }
 
 .software-button {
   display: inline-block;
   padding: 12px 18px;
   background: #793c49;
-  color: #f3e7d8;
   border: 1px solid #d3a36d;
+  color: #f3e7d8;
   text-decoration: none;
   font-size: 13px;
-  transition: background 0.2s;
 }
 
 .software-button:hover {
   background: #a15a69;
 }
 
-@media (max-width: 850px) {
-  .software-card {
+@media (max-width: 750px) {
+  .selected-project-layout {
     grid-template-columns: 1fr;
   }
 
-  .software-preview {
-    min-height: 260px;
-  }
-
-  .software-heading {
-    margin-bottom: 35px;
+  .selected-project-image {
+    min-height: 220px;
   }
 }
 
@@ -168,11 +203,13 @@
     padding: 45px 16px 70px;
   }
 
-  .software-preview {
-    min-height: 200px;
+  .project-icon-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
 
-  .software-details {
-    padding: 22px;
+  .project-icon-card {
+    min-height: 135px;
+    padding: 16px 8px;
   }
 }

@@ -1,18 +1,20 @@
 
 import { useState } from "react";
+import { Plane, Terminal } from "lucide-react";
 import "./Software.css";
 
 const projects = [
   {
     id: "strix",
+    shortName: "STRIX",
     title: "STRIX Search & Rescue Dashboard",
     category: "Full-Stack Development",
     status: "In Development",
+    icon: Plane,
     description:
       "A web-based command station for an autonomous search-and-rescue drone, designed to visualize telemetry and support mission monitoring.",
     technologies: [
       "React",
-      "TypeScript",
       "FastAPI",
       "Python",
       "ROS 2",
@@ -20,94 +22,155 @@ const projects = [
       "Leaflet",
     ],
     highlights: [
-      "Designed a responsive dashboard interface for drone telemetry.",
-      "Integrated frontend components with a FastAPI backend.",
-      "Developed real-time data visualization using WebSockets.",
-      "Worked with simulated drone telemetry during development.",
+      "Designed a responsive dashboard for drone telemetry.",
+      "Connected React components to a FastAPI backend.",
+      "Implemented real-time updates using WebSockets.",
+      "Worked with simulated drone telemetry.",
     ],
     github:
       "https://github.com/MAXIMUS-TURBO/search-and-rescue-drone-dashboard",
     image: "/images/strix-dashboard.png",
   },
+  {
+    id: "hawk",
+    shortName: "Hawk",
+    title: "Hawk Programming Language",
+    category: "Compiler Design",
+    status: "Academic Project",
+    icon: Terminal,
+    description:
+      "A custom programming language implemented in Java, featuring lexical analysis and recursive-descent parsing.",
+    technologies: [
+      "Java",
+      "Compiler Design",
+      "Lexical Analysis",
+      "Parsing",
+      "Symbol Tables",
+    ],
+    highlights: [
+      "Implemented a lexical scanner for recognizing tokens.",
+      "Developed a recursive-descent parser.",
+      "Added syntax validation and error reporting.",
+      "Worked with grammar rules and language constructs.",
+    ],
+    github: "https://github.com/MAXIMUS-TURBO/Hawk-Programming-Language",
+    image: "/images/hawk-language.png",
+  },
 ];
 
-function ProjectCard({ project }) {
+function Software() {
+  const [selectedId, setSelectedId] = useState("strix");
   const [imageFailed, setImageFailed] = useState(false);
 
-  return (
-    <article className="software-card">
-      <div className="software-preview">
-        {!imageFailed ? (
-          <img
-            src={project.image}
-            alt={`${project.title} interface preview`}
-            onError={() => setImageFailed(true)}
-          />
-        ) : (
-          <div className="software-image-placeholder">
-            <span>✦</span>
-            <p>PROJECT PREVIEW COMING SOON</p>
-          </div>
-        )}
-      </div>
-
-      <div className="software-details">
-        <div className="software-meta">
-          <span>{project.category}</span>
-          <span className="software-status">{project.status}</span>
-        </div>
-
-        <h2>{project.title}</h2>
-        <p className="software-description">{project.description}</p>
-
-        <h3>Key Contributions</h3>
-        <ul>
-          {project.highlights.map((highlight) => (
-            <li key={highlight}>{highlight}</li>
-          ))}
-        </ul>
-
-        <div className="software-tags">
-          {project.technologies.map((tech) => (
-            <span key={tech}>{tech}</span>
-          ))}
-        </div>
-
-        <div className="software-actions">
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="software-button"
-          >
-            View on GitHub ↗
-          </a>
-        </div>
-      </div>
-    </article>
+  const selectedProject = projects.find(
+    (project) => project.id === selectedId
   );
-}
 
-function Software() {
+  function selectProject(id) {
+    setSelectedId(id);
+    setImageFailed(false);
+  }
+
   return (
-    <section className="software-page">
+    <div className="software-page">
       <header className="software-heading">
         <span className="eyebrow">COLLECTION 01 / SOFTWARE</span>
-
         <h1>Software Development</h1>
-
         <p>
-          A collection of applications, interfaces, and technical
-          projects focused on building useful and thoughtful software.
+          A collection of applications, experiments, and
+          technical projects.
         </p>
       </header>
 
-      <div className="software-projects">
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
+      <div className="project-icon-grid">
+        {projects.map((project) => {
+          const Icon = project.icon;
+
+          return (
+            <button
+              key={project.id}
+              type="button"
+              className={`project-icon-card ${
+                selectedId === project.id ? "selected" : ""
+              }`}
+              onClick={() => selectProject(project.id)}
+              aria-pressed={selectedId === project.id}
+            >
+              <Icon size={34} strokeWidth={1.5} aria-hidden="true" />
+
+              <span className="project-icon-name">
+                {project.shortName}
+              </span>
+
+              <span className="project-icon-category">
+                {project.category}
+              </span>
+            </button>
+          );
+        })}
       </div>
-    </section>
+
+      <section className="selected-project" aria-live="polite">
+        <div className="selected-project-header">
+          <span className="eyebrow">SELECTED ARTIFACT</span>
+          <span className="software-status">
+            {selectedProject.status}
+          </span>
+        </div>
+
+        <h2>{selectedProject.title}</h2>
+        <p className="selected-project-description">
+          {selectedProject.description}
+        </p>
+
+        <div className="selected-project-layout">
+          <div className="selected-project-image">
+            {!imageFailed ? (
+              <img
+                key={selectedProject.id}
+                src={selectedProject.image}
+                alt={`${selectedProject.title} preview`}
+                onError={() => setImageFailed(true)}
+              />
+            ) : (
+              <div className="project-image-placeholder">
+                <span>✦</span>
+                <p>Project preview coming soon</p>
+              </div>
+            )}
+          </div>
+
+          <div className="selected-project-info">
+            <h3>Key Contributions</h3>
+
+            <ul>
+              {selectedProject.highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
+            </ul>
+
+            <h3>Technologies</h3>
+
+            <div className="software-tags">
+              {selectedProject.technologies.map((tech) => (
+                <span key={tech}>{tech}</span>
+              ))}
+            </div>
+
+            {selectedProject.github && (
+              <a
+                href={selectedProject.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="software-button"
+              >
+                View on GitHub ↗
+              </a>
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
 
