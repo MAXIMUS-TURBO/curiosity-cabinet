@@ -2,6 +2,7 @@
 import { useState } from "react";
 import posts from "../data/instagramPosts.json";
 import "./InstagramGallery.css";
+import { assetPath } from "../utils/assetPath";
 
 export default function InstagramGallery() {
   const [selectedPost, setSelectedPost] = useState(null);
@@ -66,7 +67,7 @@ export default function InstagramGallery() {
             aria-label={`View Instagram post from ${post.date}`}
           >
             <img
-              src={post.image}
+              src={assetPath(post.image)}
               alt={post.caption?.slice(0, 100) || "Instagram post"}
               loading="lazy"
             />
@@ -127,7 +128,7 @@ export default function InstagramGallery() {
 
             <div className="instagram-modal-media">
               <img
-                src={selectedPost.images[slideIndex]}
+                src={assetPath(selectedPost.images[slideIndex])}
                 alt={`Slide ${slideIndex + 1}`}
               />
 

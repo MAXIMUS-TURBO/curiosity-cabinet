@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Plane, Terminal } from "lucide-react";
 import "./Software.css";
+import { assetPath } from "../utils/assetPath";
 
 const projects = [
   {
@@ -128,7 +129,7 @@ function Software() {
             {!imageFailed ? (
               <img
                 key={selectedProject.id}
-                src={selectedProject.image}
+                src={assetPath(selectedProject.image)}
                 alt={`${selectedProject.title} preview`}
                 onError={() => setImageFailed(true)}
               />

@@ -10,6 +10,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import "./Marketing.css";
+import { assetPath } from "../utils/assetPath";
 
 import InstagramGallery from "../components/InstagramGallery";
 
@@ -223,7 +224,7 @@ function Marketing() {
             <div className="marketing-gallery-image">
               <img
                 key={currentImage.src}
-                src={currentImage.src}
+                src={assetPath(currentImage.src)}
                 alt={currentImage.alt}
               />
             </div>

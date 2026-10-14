@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import "./About.css";
+import { assetPath } from "../utils/assetPath";
 
 const skills = [
   {
@@ -68,7 +69,7 @@ function About() {
           <div className="about-profile">
             <div className="about-photo-frame">
               <img
-                src="/images/profile.jpg"
+                src={assetPath("/images/profile.jpg")}
                 alt="Portrait of Fatima"
                 className="about-photo"
               />

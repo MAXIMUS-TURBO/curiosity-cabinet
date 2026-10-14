@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { assetPath } from "../utils/assetPath";
 
 export default function AnalyticsProjectCard({ project, onClick }) {
   const [imageFailed, setImageFailed] = useState(false);
@@ -15,7 +16,7 @@ export default function AnalyticsProjectCard({ project, onClick }) {
         <div className="observatory-project-image">
           {!imageFailed && project.image ? (
             <img
-              src={project.image}
+              src={assetPath(project.image)}
               alt=""
               loading="lazy"
               onError={() => setImageFailed(true)}

@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react";
+import { assetPath } from "../utils/assetPath";
 
 export default function AnalyticsProjectModal({ project, onClose }) {
   const [activeImage, setActiveImage] = useState(0);
@@ -75,7 +76,7 @@ export default function AnalyticsProjectModal({ project, onClose }) {
         {images.length > 0 && (
           <div className="analytics-modal-gallery">
             <img
-              src={images[activeImage]}
+              src={assetPath(images[activeImage])}
               alt={`${project.title} screenshot ${activeImage + 1}`}
             />
 
