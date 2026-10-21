@@ -70,8 +70,8 @@ function About() {
             <div className="about-photo-frame">
               <img
                 src={assetPath("/images/profile.jpg")}
-                alt="Portrait of Fatima"
-                className="about-photo"
+                alt={("Portrait of Fatima")}
+                className={("about-photo")}
               />
             </div>
 
